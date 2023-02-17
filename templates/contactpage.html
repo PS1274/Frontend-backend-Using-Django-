@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    {% comment %} <link rel="stylesheet" href="styleps.css"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background:linear-gradient(to bottom, #0f0c29, #302b63, #24243e);;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  width: 85%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .content .left-side{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+.content .left-side::before{
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:  #6d44b8;
+}
+.content .left-side .details{
+  margin: 14px;
+  text-align: center;
+}
+.content .left-side .details i{
+  font-size: 30px;
+  color: #3e2093;
+  margin-bottom: 10px;
+}
+.content .left-side .details .topic{
+  font-size: 18px;
+  font-weight: 500;
+}
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+  font-size: 14px;
+  color: #afafb6;
+}
+.container .content .right-side{
+  width: 75%;
+  margin-left: 75px;
+}
+.content .right-side .topic-text{
+  font-size: 23px;
+  font-weight: 600;
+  color: #3e2093;
+}
+.right-side .input-box{
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+}
+.right-side .input-box input,
+.right-side .input-box textarea{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.right-side .message-box{
+  min-height: 110px;
+}
+.right-side .input-box textarea{
+  padding-top: 6px;
+}
+.right-side .button{
+  display: inline-block;
+  margin-top: 12px;
+}
+.right-side .button input[type="button"]{
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background:linear-gradient(
+    to right top,
+    #e77d1e,
+    #e9882d,
+    #ea933b,
+    #ec9d48,
+    #eea756
+  );
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input[type="button"]:hover{
+  background:linear-gradient(
+    to right top,
+    #e77d1e,
+    #e9882d,
+    #ea933b,
+    #ec9d48,
+    #eea756
+  );
+}
+
+@media (max-width: 950px) {
+  .container{
+    width: 90%;
+    padding: 30px 40px 40px 35px ;
+  }
+  .container .content .right-side{
+   width: 75%;
+   margin-left: 55px;
+}
+}
+@media (max-width: 820px) {
+  .container{
+    margin: 40px 0;
+    height: 100%;
+  }
+  .container .content{
+    flex-direction: column-reverse;
+  }
+ .container .content .left-side{
+   width: 100%;
+   flex-direction: row;
+   margin-top: 40px;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+ .container .content .left-side::before{
+   display: none;
+ }
+ .container .content .right-side{
+   width: 100%;
+   margin-left: 0;
+ }
+}
+
+
+
+/* 
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    // stylelint-disable-next-line scss/selector-no-union-class-name
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+        .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
+            padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
+          }
+        }
+
+        .navbar-nav-scroll {
+          overflow: visible;
+        }
+
+        .navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
+        }
+
+        .navbar-toggler {
+          display: none;
+        }
+
+        .offcanvas {
+          // stylelint-disable declaration-no-important
+          position: static;
+          z-index: auto;
+          flex-grow: 1;
+          width: auto !important;
+          height: auto !important;
+          visibility: visible !important;
+          background-color: transparent !important;
+          border: 0 !important;
+          transform: none !important;
+          @include box-shadow(none);
+          @include transition(none);
+          // stylelint-enable declaration-no-important
+
+          .offcanvas-header {
+            display: none;
+          }
+
+          .offcanvas-body {
+            display: flex;
+            flex-grow: 0;
+            padding: 0;
+            overflow-y: visible;
+          }
+        }
+      }
+    }
+  }
+} */
+
+/* navbar css */
+
+.logo{
+color: #fefefe;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+font-size: medium;
+padding-right:20px;
+padding-left: 20px;
+
+}
+.mylogo{
+  border-radius: 100px;
+  border-color: aquamarine;
+  box-shadow: 10px;
+ border-width: 10px;
+}
+.nav-link{
+  color: aqua;
+}
+
+.butt {
+background-color: #573b8a;
+height: 60px;
+width: 194px;
+color:white ;
+cursor: pointer;
+border-radius: 18px;
+border:none;
+font-weight: bold;
+font-size: 15px;
+margin-left: 190px;
+margin-top: 20px;
+transition: box-shadow 0.15s;
+            
+}
+.butt:hover{
+ box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+    </style>
+    </head>
+    <body>
+
+<!-- 
+        <nav class="navbar fixed-top bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar scroll</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Link
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Link</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav> -->
+
+
+          <nav class="navbar fixed-top navbar-light bg-dark">
+            <a onclick="prom();" class="logo" href="#">
+              <img src ="data:image/png;base64,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" alt="Logo" width="30" height="24" class="mylogo">
+              &nbsp TRITUF 
+              <p class="para" id="para">Hello Triffians</p>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="homie" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="aboutus" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="more" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Help</a>
+                            <a class="dropdown-item" href="#">Contact Us</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Feedback</a>
+                        </div>
+                    </li>
+                 
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                   
+                    <div class="container-fluid">
+                      <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder ="Search" aria-label="Search">
+                        <button class="butt" type="submit">Search</button>
+                        
+                      </form>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+   
+   
+
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">KIIT UNIVERSITY</div>
+          <div class="text-two"> Bhubaneswar, India </div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+919711371548</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">trituf@gmail.com</div>
+      
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any queries related to trituf, you can send a message here. It's my pleasure to help you.</p>
+      <form id="post-form">
+        {% csrf_token %}
+        <div class="input-box">
+          <input type="text"  name="username" placeholder="Enter your name" value="{{username}}">
+        </div>
+        <div class="input-box">
+          <input type="text" name="message" placeholder="Enter your query" value="{{message}}">
+        </div>
+        <div class="input-box message-box">
+          <input type="submit" value="Send">
+            </div>
+            <script type="text/javascript">
+              $(document).on('submit','#post-form',function(e){
+                e.preventDefault();
+            
+                $.ajax({
+                  type:'POST',
+                  url:'/send2',
+                  data:{
+                      username:$('#username').val(),
+                    
+                      message:$('#message').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                  },
+                  success: function(data){
+                     alert(data)
+                  }
+                });
+                document.getElementById('message').value = ''
+              });
+            </script>
+   

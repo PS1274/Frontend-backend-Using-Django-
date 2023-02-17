@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      This is a practice page
+    </title>
+  </head>
+      <body>
+         <h1>Input text here</h1>
+         {%if user.is_authenticated %}
+         <h1>WELCOME, {{user.username}}</h1>
+         {%else%}
+         <h1>made by PS</h1>
+         {% endif %}
+      <form method="POST" action="counter">
+        {% csrf_token %}
+        <textarea name="text" rows="25" cols="100"></textarea><br>
+        <input type="submit"/>
+        {%if user.is_authenticated%}
+        <a href="logout" >Logout</a>
+        {%else%}
+        <input type="Login again"/>
+        {%endif%}
+      </form>
+
+      </body>
+</html>
+
+

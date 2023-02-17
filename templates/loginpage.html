@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>LOGIN</title>
+        <script>
+         function addpara(){
+          document.getElementById("para").innerHTML="Beerus sama op";
+         }
+         function searchkaro(){
+          var test=document.getElementById("cf1").value;
+          if(test.length == 0){
+            //document.getElementById("searchkaro").innerHTML="Are kuch toh daalo";
+            alert("Kuch toh daalo");
+          }
+          else{
+            document.getElementById("para").innerHTML= "Welcome " + test;
+          }
+         }
+       function prom(){
+       var inpu= prompt("Do we know you?","please enter yes or no");
+       if(inpu=="yes"){
+         document.getElementById("para").innerHTML="Please Log in User";
+       }
+       else{
+        document.getElementById("para").innerHTML="Please sign up User";
+       }
+         }
+         function checkfield1(){
+        var name=document.getElementById("cf1").value;
+        var rel= /^[a-zA-Z|s'|-]{2,15}$/
+        if(rel.test(name)){
+          //alert("Please enter a valid username!");
+          document.getElementById("mssg1").style.color="green";
+          document.getElementById("mssg1").innerHTML="<strong>Valid</strong>";
+        }
+         else {
+          document.getElementById("mssg1").style.color="red";
+          document.getElementById("mssg1").innerHTML="Not Valid";
+         }
+        }
+        // function checkfield2(){
+        // var mail=document.getElementById("cf2").value;
+        // var el= /^[a-zA-Z|s'@.|-]{2,15}$/
+        // if(el.test(mail)){
+        //   //alert("Please enter a valid username!");
+        //   document.getElementById("mssg2").style.color="green";
+        //   document.getElementById("mssg2").innerHTML="<strong>Valid</strong>";
+        // }
+        //  else {
+        //   document.getElementById("mssg2").style.color="red";
+        //   document.getElementById("mssg2").innerHTML="Not Valid";
+        //  }
+        // }
+        // function checkfield3(){
+        // var pass=document.getElementById("cf3").value;
+        // var rel= /^[a-zA-Z|s'|-]{2,15}$/
+        // if(rel.test(name)){
+            
+        //   document.getElementById("mssg3").style.color="green";
+        //   document.getElementById("mssg3").innerHTML="<strong>Valid</strong>";
+        // }
+        //  else {
+        //   document.getElementById("mssg3").style.color="red";
+        //   document.getElementById("mssg3").innerHTML="<strong>Not Valid</strong>";
+        //  }
+        // }
+        // clr = setTimeout(checkfield1, 2000);
+        // clr = setTimeout(checkfield2, 2000);
+        // clr = setTimeout(checkfield3, 5000);
+        function checkpass(){
+          var pass1=document.getElementById("cf3").value;
+          var pass2=document.getElementById("cf4").value;
+          if(pass1==pass2){
+            //alert("password match!");
+            return true;
+          }
+          else{
+            alert("password do not match");
+            return false;
+          }
+        }
+        </script>
+        <style>
+          .logo{
+          color: #fefefe;
+          font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+          font-size: medium;
+          padding-right:20px;
+          padding-left: 20px;
+
+          }
+          .mylogo{
+            border-radius: 100px;
+            border-color: aquamarine;
+            box-shadow: 10px;
+           border-width: 10px;
+          }
+          .nav-link{
+            color: aqua;
+          }
+          .logii{
+            margin-top: 20px;
+            padding-top: 40px;
+            padding-left: 100px;
+          }
+          .butt{
+          width: 250px;
+          }
+          .homie{
+            color: whitesmoke;
+           
+          }       
+          .aboutus{
+            color: whitesmoke;
+          }
+          .more{
+        color: whitesmoke;
+       }
+       .para{
+        padding-left: 30px;
+       }
+       /* .mssg1{
+        color: #e0dede;
+        text-align: center;
+       } */
+       .mssg1{
+       
+        text-align: center;
+       }
+       .mssg2{
+        text-align: center;
+       }
+       .mssg3{
+        text-align: center;
+       }
+        </style>
+        
+    </head>
+    <body>
+     
+      <nav class="navbar fixed-top navbar-light bg-dark">
+        <a onclick="prom();" class="logo" href="#">
+          <img src ="data:image/png;base64,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" alt="Logo" width="30" height="24" class="mylogo">
+          &nbsp TRITUF 
+          <p class="para" id="para">Hello Triffians</p>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="homie" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="aboutus" href="#">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="more" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Help</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Feedback</a>
+                    </div>
+                </li>
+             
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+               
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder ="Search" aria-label="Search">
+                    <button class="butt" type="submit">Search</button>
+                    
+                  </form>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    
+   <style>
+    body{
+      margin: 0;
+     padding-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Jost', sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    }
+    .main{
+      width: 350px;
+      height: 500px;
+      background: red;
+      overflow: hidden;
+      background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+      border-radius: 10px;
+      box-shadow: 5px 20px 50px #000;
+    }
+    #chk{
+      display: none;
+    }
+    .signup{
+      position: relative;
+      width:100%;
+      height: 100%;
+    }
+    label{
+      color: #fff;
+      font-size: 2.3em;
+      justify-content: center;
+      display: flex;
+      margin: 60px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .5s ease-in-out;
+    }
+    input{
+      width: 60%;
+      height: 20px;
+      background: #e0dede;
+      justify-content: center;
+      display: flex;
+      margin: 20px auto;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+    button{
+      width: 60%;
+      height: 40px;
+      margin: 10px auto;
+      justify-content: center;
+      display: block;
+      color: #fff;
+      background: #573b8a;
+      font-size: 1em;
+      font-weight: bold;
+      margin-top: 20px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      transition: .2s ease-in;
+      cursor: pointer;
+    }
+    button:hover{
+      background: #6d44b8;
+    }
+    .login{
+      height: 360px;
+      background: #eee;
+      border-radius: 60% / 10%;
+      transform: translateY(-180px);
+      transition: .8s ease-in-out;
+    }
+    .login label{
+      color: #573b8a;
+      transform: scale(.6);
+    }
+    
+    #chk:checked ~ .login{
+      transform: translateY(-500px);
+    }
+    #chk:checked ~ .login label{
+      transform: scale(1);	
+    }
+    #chk:checked ~ .signup label{
+      transform: scale(.6);
+    }
+    </style>
+    <style>
+     h5{
+           color:red;
+           align:center;
+      }
+    </style>
+    <div class="main">  	
+      <input type="checkbox" id="chk" aria-hidden="true">
+    
+        <div class="signup">
+          
+          <form method="POST" action="register">
+            {% csrf_token %}
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input onblur="searchkaro();" id="cf1" type="text" name="username" placeholder="User name" required=""><p id="mssg1"class="mssg1"></p>
+            <input onblur="checkfield2();" id="cf2" type="email" name="email" placeholder="Email" required=""><p id="mssg2"class="mssg2"></p>
+            <input onblur="checkfield3();" id="cf3"type="password" name="password" placeholder="Password" required=""><span id="mssg3" class="mssg3"></span>
+            <input onblur="checkpass();" id="cf4"type="password" name="password2" placeholder="Confirm Password" required=""><span id="mssg4" class="mssg4"></span>
+            <button onclick="searchkaro();" >Sign up</button>
+          </form>
+        </div>
+      <style>
+        h3{
+          color:red;
+        }
+      </style>
+        <div class="login">
+          {% for message in messages %}
+          <h3>{{message}}</h3>
+          {% endfor %}
+          <form action="login" method="POST">
+            {% csrf_token %}
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="username" name="username" placeholder="Username" required="">
+            <input type="password" name="password" placeholder="Password" required="">
+            <button >Login</button>
+          </form>
+        </div>
+    </div>
+
+      </body>
+      </html>
